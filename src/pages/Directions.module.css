@@ -1,0 +1,333 @@
+.directionsContainer {
+  padding-top: 1rem;
+  height: calc(100vh - 80px); /* Fill the remaining height */
+  display: flex;
+  flex-direction: column;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  transition: color var(--transition-fast);
+  align-self: flex-start;
+}
+
+.backBtn:hover {
+  color: white;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.splitLayout {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 2rem;
+  flex: 1;
+  min-height: 0; /* Important for flex children to scroll */
+}
+
+.routingPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Inputs Card */
+.inputsCard {
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+
+.routeTimeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.dotStart {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  border: 3px solid var(--accent-primary);
+  background: var(--bg-primary);
+}
+
+.line {
+  width: 2px;
+  height: 38px;
+  background: var(--glass-border);
+  margin: 4px 0;
+}
+
+.dotEnd {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background: var(--accent-primary);
+}
+
+.inputStack {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputGroup {
+  position: relative;
+}
+
+.routeInput {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  color: white;
+  font-family: inherit;
+}
+
+.routeInput:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.destinationInput {
+  background: rgba(249, 115, 22, 0.05);
+  border-color: rgba(249, 115, 22, 0.2);
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.destinationInput + .inputIcon {
+  color: var(--accent-primary);
+}
+
+/* Tabs */
+.tabsFlex {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.25rem;
+  border-radius: var(--radius-md);
+}
+
+.transportTab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.transportTab:hover {
+  color: white;
+}
+
+.activeTab {
+  background: var(--glass-bg);
+  box-shadow: var(--shadow-sm);
+  color: white;
+}
+
+/* Routes List */
+.routesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.routeCard {
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.routeCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.routeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.routeTypeInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.routeBadge {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.routeVessel {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.routeTimeInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.duration {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+}
+
+.arrivalTime {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.stepsBreakdown {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stepBubble {
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  background: var(--bg-primary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+}
+
+.stepConnector {
+  width: 15px;
+  height: 2px;
+  background: var(--text-muted);
+}
+
+/* Taxi Card */
+.taxiCard {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.taxiHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taxiBrand {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.taxiPrice {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--warning);
+}
+
+.taxiDetail {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.taxiAlert {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+  font-size: 0.85rem;
+  border-radius: var(--radius-md);
+  line-height: 1.4;
+}
+
+/* Map Panel */
+.mapPanel {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+}
+
+.staticRouteMap {
+  width: 100%;
+  height: 100%;
+}
+
+.staticRouteMap iframe {
+  filter: contrast(1.1) brightness(0.85); /* Adjust map to dark theme vibe */
+}
+
+@media (max-width: 1024px) {
+  .splitLayout {
+    grid-template-columns: 1fr;
+    height: auto;
+    overflow-y: visible;
+  }
+  
+  .directionsContainer {
+    height: auto;
+  }
+  
+  .mapPanel {
+    height: 400px;
+  }
+}
